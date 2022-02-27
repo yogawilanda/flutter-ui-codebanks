@@ -1,5 +1,7 @@
 import 'package:camera/camera.dart';
+//
 import 'package:codebanks/View/content3.dart';
+//
 import 'package:flutter/material.dart';
 
 class OpenCamera extends StatefulWidget {
@@ -10,11 +12,11 @@ class OpenCamera extends StatefulWidget {
 }
 
 class _OpenCameraState extends State<OpenCamera> {
+  //
   late List<CameraDescription> cameras;
+  //
   late CameraController cameraCtrls;
   @override
-
-  //TODO: create controller for camera on desktop
   void openNativeCamera() {
     super.initState();
     cameraCtrls = CameraController(cameras[0], ResolutionPreset.max);
@@ -28,7 +30,6 @@ class _OpenCameraState extends State<OpenCamera> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     cameraCtrls.dispose();
     super.dispose();
   }

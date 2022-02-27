@@ -8,26 +8,15 @@ class UserInput extends StatefulWidget {
 }
 
 class _UserInputState extends State<UserInput> {
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   setState(() {
-  //     // TextEditingController.fromValue(userInputted.value);
-  //   });
-  // }
-
-  // @override
-  // void dispose() {
-  //   // TextEditingController.fromValue(userInputted.value);
-  //   super.dispose();
-  // }
   final userInputted = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey.shade900,
+      //
       appBar: AppBar(),
+      //
       body: Column(
         children: [
           Container(
@@ -38,7 +27,6 @@ class _UserInputState extends State<UserInput> {
                     controller: userInputted,
                   ),
                 ),
-                // ElevatedButton(onPressed: () {}, child: Icon(Icons.send))
               ],
             ),
           ),
