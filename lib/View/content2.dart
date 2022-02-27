@@ -1,6 +1,6 @@
 import 'package:camera/camera.dart';
+import 'package:codebanks/View/content3.dart';
 import 'package:flutter/material.dart';
-import 'package:codebanks/main.dart';
 
 class OpenCamera extends StatefulWidget {
   const OpenCamera({Key? key}) : super(key: key);
@@ -42,11 +42,23 @@ class _OpenCameraState extends State<OpenCamera> {
         centerTitle: true,
       ),
       body: Center(
-        child: ElevatedButton(
-            onPressed: () {
-              openNativeCamera();
-            },
-            child: Text('Open Camera')),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            ElevatedButton(
+                onPressed: () {
+                  openNativeCamera();
+                },
+                child: Text('Open Camera')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (_) {
+                    return const UserInput();
+                  }));
+                },
+                child: Text('Go to next feature')),
+          ],
+        ),
       ),
     );
   }

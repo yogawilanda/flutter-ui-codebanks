@@ -4,6 +4,8 @@ import 'package:open_file/open_file.dart';
 import 'package:file_picker/file_picker.dart';
 
 class ImportFile extends StatelessWidget {
+  const ImportFile({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,21 +24,21 @@ class ImportFile extends StatelessWidget {
                   ButtonBar(
                     mainAxisSize: MainAxisSize.min,
                     alignment: MainAxisAlignment.spaceAround,
-                    buttonPadding: EdgeInsets.symmetric(horizontal: 24),
+                    buttonPadding: const EdgeInsets.symmetric(horizontal: 24),
                     children: [
                       ElevatedButton(
                           onPressed: () {
                             pickSingleFile();
                           },
-                          child: Text('Click here to import')),
+                          child: const Text('Click here to import')),
                       ElevatedButton(
                           onPressed: () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (_) => OpenCamera()));
+                                    builder: (_) => const OpenCamera()));
                           },
-                          child: Text('Go to next feature')),
+                          child: const Text('Go to next feature')),
                     ],
                   ),
                 ],
@@ -55,7 +57,7 @@ class ImportFile extends StatelessWidget {
 }
 
 void displayPickedFile(PlatformFile file) async {
-  OpenFile.open(file.path);
+  // OpenFile.open(file.path);
 }
 
 void pickSingleFile() async {
