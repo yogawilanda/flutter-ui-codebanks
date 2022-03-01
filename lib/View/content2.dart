@@ -53,9 +53,8 @@ class _OpenCameraState extends State<OpenCamera> {
                 child: Text('Open Camera')),
             ElevatedButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (_) {
-                    return const UserInput();
-                  }));
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (_) => UserInput()));
                 },
                 child: Text('Go to next feature')),
           ],
