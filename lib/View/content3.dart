@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'content4.dart';
 
 class UserInput extends StatefulWidget {
   const UserInput({Key? key}) : super(key: key);
@@ -74,6 +75,17 @@ class _UserInputState extends State<UserInput> {
                   },
                   child: const Text('Click to display inputted Text'),
                 ),
+              ),
+              SizedBox(
+                height: 30,
+                child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) => AuthenticationPage()));
+                    },
+                    child: Text('Go to Next Page')),
               )
             ],
           ),
