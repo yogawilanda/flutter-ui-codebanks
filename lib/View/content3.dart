@@ -14,16 +14,14 @@ class _UserInputState extends State<UserInput> {
 
   @override
   void initState() {
-    // TODO: implement initState
-    super.initState();
     userInputted.text;
+    super.initState();
   }
 
   @override
   void dispose() {
-    // TODO: implement dispose
-    super.dispose();
     TextEditingController.fromValue(userInputted.value);
+    super.dispose();
   }
 
   @override
@@ -34,14 +32,25 @@ class _UserInputState extends State<UserInput> {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 36,
               ),
+
+              //Title can be change through the declaration above
               Text(title),
+
+              //User can return value from TextField goes here.
               Container(
-                  width: 300, height: 300, child: Text(userInputted.text)),
+                alignment: Alignment.center,
+                width: 300,
+                height: 300,
+                child: Text(userInputted.text),
+              ),
+
+              //Helper to make user Understand that the function below are editable.
               Container(
-                child: Text(
+                padding: const EdgeInsets.symmetric(horizontal: 36),
+                child: const Text(
                   'This is example of User Input Text',
                   style: TextStyle(color: Colors.white70),
                 ),
@@ -52,13 +61,20 @@ class _UserInputState extends State<UserInput> {
                   controller: userInputted,
                 ),
               ),
-              ElevatedButton(
+              const SizedBox(
+                height: 30,
+              ),
+              SizedBox(
+                height: 48,
+                child: ElevatedButton(
                   onPressed: () {
                     setState(() {
                       userInputted.text;
                     });
                   },
-                  child: Text('Click to display inputted Text'))
+                  child: const Text('Click to display inputted Text'),
+                ),
+              )
             ],
           ),
         ),
